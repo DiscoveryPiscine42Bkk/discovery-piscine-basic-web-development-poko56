@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table Exercise</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }
+
+        .first-cell {
+            background-color: green;
+            color: white;
+        }
+
+        .second-cell {
+            background-color: pink;
+            color: black;
+        }
+
+        /* Ensure the table shrinks */
+        @media (max-width: 600px) {
+            td {
+                width: 100%; /* Cells take up full width on smaller screens */
+                height: 50%; /* Adjust the height to fit better */
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="first-cell">First cell</td>
+            <td class="second-cell">Second cell</td>
+        </tr>
+    </table>
+</body>
+</html>
