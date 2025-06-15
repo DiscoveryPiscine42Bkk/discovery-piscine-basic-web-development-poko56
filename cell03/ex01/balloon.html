@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="balloon" class="balloon"></div>
+
+    <script>
+        let balloon = document.getElementById("balloon");
+        let size = 200;
+        let colorIndex = 0;
+        let colors = ['red', 'green', 'blue'];
+
+        balloon.addEventListener("click", function () {
+            if (size >= 420) {
+                size = 200; // Explodes and resets size
+                colorIndex = 0; // Resets color to red
+            } else {
+                size += 10; // Increase the size by 10px
+                colorIndex = (colorIndex + 1) % 3; // Change color in order red -> green -> blue -> red
+            }
+
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+            balloon.style.backgroundColor = colors[colorIndex];
+        });
+
+        balloon.addEventListener("mouseleave", function () {
+            if (size > 200) {
+                size -= 5; // Decrease size by 5px, but not below 200px
+            }
+            colorIndex = (colorIndex - 1 + 3) % 3; // Reverse color order
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+            balloon.style.backgroundColor = colors[colorIndex];
+        });
+    </script>
+
+</body>
+
+</html>
