@@ -3,6 +3,6 @@ if [ $# -eq 0 ]; then
 else
   for arg in "$@"
   do
-    echo "$arg"
-  done | head -n 3
+    mkdir "ex$arg"
+  done
 fi
