@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container-fluid {
+    height: 100vh; /* Full height of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Button Styles */
+.btn-group .btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styles */
+.btn i {
+    margin-right: 10px;  /* Add space between icon and text */
+    font-size: 20px;  /* Adjust icon size */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for better readability */
+}
+
+/* Adjustments for the background image */
+.container-fluid {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Decrease font size on smaller screens */
+    }
+
+    .btn-group .btn {
+        font-size: 16px; /* Adjust button font size */
+        padding: 12px 24px; /* Adjust padding on smaller screens */
+    }
+
+    .container-fluid {
+        height: auto; /* Allow content to adjust based on screen size */
+    }
+
+    .text-center {
+        padding: 20px;
+    }
+}
